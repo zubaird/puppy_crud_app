@@ -24,6 +24,8 @@ You are going to be building an application for the local SF puppy rescue.  They
 * Each puppy has a profile page (show page) (READ)
 * A puppy's information can be edited on their profile page (UPDATE)
 * A puppy can be removed on the show page (DESTROY)
+* We want these puppies to be adopted so don't scare away users (like I once did) with an app that is not styled.  The rescue wants you to use Bootstrap.
+
 
 
 
