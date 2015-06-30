@@ -5,6 +5,8 @@ class PuppiesController < ApplicationController
   	@puppies = Puppy.all
   end
 
-
+  def show
+  	@puppy = Puppy.find_by(id: params[:id])
+  end
 
 end
