@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
 
   root 'puppies#index'
+  get  'puppies/' => 'puppies#index'
+  post 'puppies/' => 'puppies#create'
+  get  'puppies/new' => 'puppies#new'
+  get  'puppies/:id/edit' => 'puppies#edit', as: 'edit_puppy'
   get  'puppies/:id' => 'puppies#show', as: 'puppy'
+  patch 'puppies/:id' => 'puppies#update'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

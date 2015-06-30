@@ -1,6 +1,9 @@
 <h1 class="page-header"><%= @puppy.name %></h1>
 
 <%= image_tag(@puppy.image_url) %>
+<div class="pull-right">
+	<%= link_to "Edit", edit_puppy_path(@puppy) %> 
+</div>
 <ul>
 	<li><%= @puppy.age  %></li>
 	<li><%= @puppy.breed %></li>
