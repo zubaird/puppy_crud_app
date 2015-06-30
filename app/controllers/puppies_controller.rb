@@ -11,9 +11,11 @@ class PuppiesController < ApplicationController
 
   def create
   	puts puppy_params
-  	puppy = Puppy.create(puppy_params)
-  	if puppy
-  	  redirect_to index
+  	@puppy = Puppy.create(puppy_params)
+  	if @puppy.save
+  	  redirect_to puppies_path, notice: 'Puppy has been added!'
+  	else
+  	  render :new
   	end
   end
 
@@ -29,10 +31,16 @@ class PuppiesController < ApplicationController
   	@puppy = Puppy.find_by(id: params[:id])
   	@puppy.update(puppy_params)
   	if @puppy.save
-  		redirect_to puppy_path(@puppy)
+  		redirect_to puppy_path(@puppy), notice: 'Puppy has been updated!'
   	else
   		render :edit
   	end
+  end
+
+  def destroy
+  	@puppy = Puppy.find_by(id: params[:id])
+  	@puppy.destroy
+  	redirect_to root_path
   end
 
 private

@@ -2,7 +2,10 @@
 
 <%= image_tag(@puppy.image_url) %>
 <div class="pull-right">
-	<%= link_to "Edit", edit_puppy_path(@puppy) %> 
+	<%= link_to "Edit", edit_puppy_path(@puppy), class:"btn btn-info" %> 
+</div>
+<div class="pull-right">
+	<%= link_to "Is Adopted", @puppy, method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-danger" %>
 </div>
 <ul>
 	<li><%= @puppy.age  %></li>

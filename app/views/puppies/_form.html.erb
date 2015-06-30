@@ -1,4 +1,5 @@
 <%= form_for(@puppy, html:{class:"form-horizontal", role:"form"}) do |f| %>
+	<%= render partial:'puppies/errors', locals:{instance:@puppy}  %>
 	<div class="form-group">
 		<%= f.label :name, class:"col-md-2"  %>
 		<div class="col-sm-7">

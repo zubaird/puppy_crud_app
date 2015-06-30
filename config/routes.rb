@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
 
-  root 'puppies#index'
+  root 'static_pages#welcome'
+  get "about" =>'static_pages#about'
+  get "contact" =>'static_pages#contact'
+  
   get  'puppies/' => 'puppies#index'
   post 'puppies/' => 'puppies#create'
   get  'puppies/new' => 'puppies#new'
   get  'puppies/:id/edit' => 'puppies#edit', as: 'edit_puppy'
   get  'puppies/:id' => 'puppies#show', as: 'puppy'
   patch 'puppies/:id' => 'puppies#update'
+  delete 'puppies/:id' => 'puppies#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
