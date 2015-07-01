@@ -10,9 +10,10 @@
 
   <div class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
-			<button type="button" class="btn btn-default navbar-btn"><%= link_to "See All Puppies!", root_path %></button>
-			<button type="button" class="btn btn-default navbar-btn">About</button>
-			<button type="button" class="btn btn-default navbar-btn">Contact</button>
+      <%= link_to "Home", root_path, class:"navbar-text" %> 
+      <%= link_to "See All Puppies!", puppies_path, class:"navbar-text" %> 
+      <%= link_to "About", "/about", class:"navbar-text" %> 
+			<%= link_to "Contact", "/contact",class:"navbar-text" %>
 		</div>
   </div>
   <br>

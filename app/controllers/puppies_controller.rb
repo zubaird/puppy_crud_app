@@ -40,7 +40,7 @@ class PuppiesController < ApplicationController
   def destroy
   	@puppy = Puppy.find_by(id: params[:id])
   	@puppy.destroy
-  	redirect_to root_path
+  	redirect_to puppies_path
   end
 
 private
